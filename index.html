@@ -5,25 +5,23 @@
 <title>Video Controller Example</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-<!-- The cuepoint stuff is here -->
+<!-- The videoController stuff is here -->
 <script src='videoController.js'></script>
 <script>
 $(document).ready(function(){
 
-	//Start cuepoint and pass in our the subtitles we want
-	cuepoint.init();
-	//cuepoint.play();
-	
+	videoController.init();
+
 	$('#btn-next').click(function(){
-		cuepoint.playAnimation(11, 22);
+		videoController.playAnimation(11, 22);
 	});
 	
 	$('#btn-play').click(function(){
-		cuepoint.play();
+		videoController.play();
 	});
 	
 	$('#btn-pause').click(function(){
-		cuepoint.pause();
+		videoController.pause();
 	});
 
 });
@@ -43,7 +41,7 @@ $(document).ready(function(){
 <body>
 	<div id='inside'>
 		<div id="container">
-			<!-- Start Cuepoint -->
+			<!-- Start videoController -->
 			<section id='cuePlayer'>
 				<video id='video' style="width: 100%; height: 100%;" preload="auto" controls>
 					<source src='video.mp4' />
