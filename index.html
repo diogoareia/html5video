@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>	
+<meta charset="utf-8">
+<title>Video Controller Example</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<!-- The cuepoint stuff is here -->
+<script src='cuepoint.js'></script>
+<script>
+$(document).ready(function(){
+
+	//Start cuepoint and pass in our the subtitles we want
+	cuepoint.init();
+	//cuepoint.play();
+	
+	$('#btn-next').click(function(){
+		cuepoint.playAnimation(11, 22);
+	});
+	
+	$('#btn-play').click(function(){
+		cuepoint.play();
+	});
+	
+	$('#btn-pause').click(function(){
+		cuepoint.pause();
+	});
+
+});
+</script>
+
+<style>
+	.slide-controls, .video-controls{float:left;}
+	.slide-controls ul{display:block; width:200px;}
+	.slide-controls ul li{display:inline; width:80px;}
+	.video-controls ul{display:block; width:200px;}
+	.video-controls ul li{display:inline; width:80px;}
+	.time-controls ul{display:block; width:200px;}
+	.time-controls ul li{display:inline; width:80px;}
+</style>
+</head>
+
+<body>
+	<div id='inside'>
+		<div id="container">
+			<!-- Start Cuepoint -->
+			<section id='cuePlayer'>
+				<video id='video' style="width: 100%; height: 100%;" preload="auto" controls>
+					<source src='video.mp4' />
+				</video>
+			</section>
+			<div class="slide-controls">
+				<ul>
+					<li><span id="btn-previous">Previous</span></li>
+					<li><span id="btn-next">Next</span></li>
+				</ul>
+			</div>
+			
+			<div class="video-controls">
+				<ul>
+					<li><span id="btn-play">Play</span></li>
+					<li><span id="btn-pause">Pause</span></li>
+				</ul>
+			</div>
+			
+			<div class="time-controls">
+				<ul>
+					<li><span id="curTime"></span></li>
+					<li><span id="vRemaining"></span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
