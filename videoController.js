@@ -1,27 +1,27 @@
 (function() {
 
-	videoController = (function() {
+	VideoController = (function() {
 		function videoController() {
 			this.nativeKeys = Object.keys;
 		}
 		
-		videoController.prototype.init = function() {
+		VideoController.prototype.init = function() {
 			this.video = document.getElementById("video");
 			return this.video;
 		};
 		
-		videoController.prototype.events = function() {};
-		videoController.prototype.currentTime = function() {
+		VideoController.prototype.events = function() {};
+		VideoController.prototype.currentTime = function() {
 			return this.video.currentTime;
 		};
 		
-		videoController.prototype.setTime = function(time) {
+		VideoController.prototype.setTime = function(time) {
 			this.time = time;
 			this.video.currentTime = time;
 			return this.video.play();
 		};
 		
-		videoController.prototype.playAnimation = function(start, end) {
+		VideoController.prototype.playAnimation = function(start, end) {
 			var self;
 			self = this;
 			this.video.currentTime = start;
@@ -39,22 +39,22 @@
 			return true;
 		};
 		
-		videoController.prototype.duration = function() {
+		VideoController.prototype.duration = function() {
 			return this.video.duration;
 		}
 		
-		videoController.prototype.play = function() {
+		VideoController.prototype.play = function() {
 			return this.video.play();
 		};
 		
-		videoController.prototype.pause = function() {
+		VideoController.prototype.pause = function() {
 			if (!this.video.paused) {
 				return this.video.pause();
 			}
 		};
 		
-		return videoController;
+		return VideoController;
 	})();
 	
-	window.videoController = new videoController;
+	window.videoController = new VideoController;
 }).call(this);
