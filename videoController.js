@@ -1,7 +1,7 @@
 (function() {
 
 	VideoController = (function() {
-		function videoController() {
+		function VideoController() {
 			this.nativeKeys = Object.keys;
 		}
 		
